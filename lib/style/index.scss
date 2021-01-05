@@ -1,0 +1,641 @@
+
+$prefix: 'dtc-chrome';
+.#{$prefix}-chrome-download {
+    background: #f2f7fa;
+    margin-top: 50px;
+    text-align: center;
+    overflow-y: auto;
+    .#{$prefix}-pic-update {
+        width: 182px;
+        margin: 148px 0 17.5px 0;
+    }
+    .#{$prefix}-divide {
+        margin: 80.5px 0 60px 0;
+        .#{$prefix}-divider-text {
+            margin: 0 20px;
+            font-size: 14px;
+            color: #666666;
+        }
+    }
+    .#{$prefix}-download {
+        width: 160px;
+        margin: 0 auto;
+        cursor: pointer;
+        .#{$prefix}-chrome-version {
+            margin-top: 16.5px;
+            font-size: 14px;
+            color: #666666;
+        }
+    }
+}
+$card_prefix: 'dtc-circle';
+.#{$card_prefix}-default {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50% 50%;
+}
+.#{$card_prefix}-waitSubmit, .#{$card_prefix}-run, .#{$card_prefix}-created, .#{$card_prefix}-submitting, .#{$card_prefix}-restarting {
+    background: #F5A623;
+}
+.#{$card_prefix}-running {
+    background: #2491F7;
+}
+.#{$card_prefix}-finished {
+    background: #00A755;
+}
+.#{$card_prefix}-stopped, .#{$card_prefix}-frozen {
+    background: #94A8C6;
+}
+.#{$card_prefix}-fail {
+    background: #EF5350;
+}
+
+$context-prefix: 'dtc-context-menu';
+.#{$context-prefix} {
+    position: fixed;
+    min-width: 90px;
+    max-width: 160px;
+    display: none;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);   
+    border-radius: 2px;
+    .#{$context-prefix}-context-menu_list {
+        margin: 0;
+        padding: 0;
+        .#{$context-prefix}-context-list_li {
+            list-style-type: none;
+        }
+        .#{$context-prefix}-context-list_a {
+            display: block;
+            padding: 7px 8px;
+            margin: 0;
+            clear: both;
+            font-size: 12px;
+            font-weight: normal;
+            color: rgba(0, 0, 0, 0.65);
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            &:hover {
+                background: #eef6fe;
+            }
+        }
+    }
+}
+
+
+
+
+.dtc-edit-Cell{
+    display: flex;
+    .dtc-edit-input-row{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    a{
+        margin-left: 10px;
+    }
+}
+.dtc-ellipsis-text{
+    width: 120px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+
+.dtc-fullscreen-icon {
+    width: 14px;
+    height: 14px;
+}
+.dtc-loading-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.dtc-loading-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    right: 0;
+    margin: auto;
+    min-width: 300px;
+    height: 160px;
+}
+.dtc-bouncywrap {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+.dtc-dotcon {
+    display: block;
+    float: left;
+    width: 50px;
+    position: absolute;
+}
+.dtc-dc1 {
+    -webkit-animation: bouncy1 1.5s infinite;
+    left: -40px;
+    animation: bouncy1 1.5s infinite;
+}
+.dtc-dc2 {
+    -webkit-animation: bouncy2 1.5s infinite;
+    animation: bouncy2 1.5s infinite;
+    left: 0;
+}
+.dtc-dc3 {
+    -webkit-animation: bouncy3 1.5s infinite;
+    animation: bouncy3 1.5s infinite;
+    left: 40px;
+}
+
+.dtc-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+@-webkit-keyframes bouncy1 {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(0px, 0px) rotate(180deg);
+    }
+    100% {
+        -webkit-transform: translate(40px, 0px) rotate(-180deg);
+    }
+}
+
+@keyframes bouncy1 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    50% {
+        transform: translate(0px, 0px) rotate(180deg);
+    }
+    100% {
+        transform: translate(40px, 0px) rotate(-180deg);
+    }
+}
+
+@-webkit-keyframes bouncy2 {
+    0% {
+        -webkit-transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(-40px);
+    }
+    100% {
+        -webkit-transform: translateX(-40px);
+    }
+}
+
+@keyframes bouncy2 {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-40px);
+    }
+    100% {
+        transform: translateX(-40px);
+    }
+}
+
+@-webkit-keyframes bouncy3 {
+    0% {
+        -webkit-transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(0px);
+    }
+    100% {
+        -webkit-transform: translateX(-40px);
+    }
+}
+
+@keyframes bouncy3 {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-40px);
+    }
+}
+
+
+
+.dtc-markdown-render-body {
+    font-family: Helvetica, Arial, Freesans, clean, sans-serif;
+    padding:1em;
+    margin:auto;
+    img {
+        max-width: 100%;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    table, th, td {
+        border: 1px solid #EAEAEA;
+        border-radius: 3px;
+        padding: 5px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #F8F8F8;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+    }
+    
+    h1 {
+        color: #000000;
+        font-size: 28px;
+    }
+    
+    h2 {
+        border-bottom: 1px solid #CCCCCC;
+        color: #000000;
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    h4 {
+        font-size: 16px;
+    }
+    
+    h5 {
+        font-size: 14px;
+    }
+    
+    h6 {
+        color: #777777;
+        background-color: inherit;
+        font-size: 14px;
+    }
+    
+    hr {
+        height: 0.2em;
+        border: 0;
+        color: #CCCCCC;
+        background-color: #CCCCCC;
+    }
+    
+    p, blockquote, ul, ol, dl, li, table, pre {
+        margin: 15px 0;
+    }
+    
+    code, pre {
+        border-radius: 3px;
+    }
+    
+    code {
+        border: 1px solid #EAEAEA;
+        margin: 0 2px;
+        padding: 0 5px;
+    }
+    
+    pre {
+        border: 1px solid #CCCCCC;
+        line-height: 1.25em;
+        overflow: auto;
+        padding: 6px 10px;
+    }
+    
+    pre > code {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    a, a:visited {
+        color: #4183C4;
+        background-color: inherit;
+        text-decoration: none;
+    }
+}
+
+.dtc-mul-select-dropdown {
+    .dtc-option-select-overlay {
+        background: #FFFFFF;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10);
+        border-radius: 2px;
+        border-radius: 2px;
+        width: 220px;
+        height: auto;
+        .dtc-option-select-overlay-menu {
+            max-height: 240px;
+            overflow-y:scroll;
+        }
+        .ant-checkbox-group {
+            width: 100%;
+        }
+        .ant-divider-horizontal {
+            background: #E8E8E8;
+            width: 204px;
+            margin: 0px 0px 0px 8px;
+            min-width: 204px;
+        }
+        .dtc-option-select-overlay-row {
+            padding: 8px;
+            &.footer-box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+$prefix: 'dtc-progress';
+.#{$prefix}-progress-bar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 10000;
+    width: 100%;
+    height: 1px;
+    background: #2491F7;
+    box-shadow: 0px 1px 3px #2491F7;
+    animation: dtc-progress-loading-anim 1s ease-in-out infinite;
+}
+
+.#{$prefix}-progress-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 10000;
+}
+
+@-webkit-keyframes dtc-progress-loading-anim {
+    to {
+        transform: translateX(200%)
+    }
+}
+
+@keyframes dtc-progress-loading-anim {
+    to {
+        transform: translateX(200%)
+    }
+}
+
+
+
+
+$prefix: 'dtc-slide-pane';
+
+.#{$prefix} {
+    background: #FFFFFF;
+    border-left: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: -2px 0 2px 0 rgba(0,0,0,0.10);
+    position: absolute;
+    display: inline-block;
+    transition: transform .3s ease-in;
+    z-index: 99;
+    &.l-#{$prefix}--fixed{
+        position: fixed;
+        top:0px;
+        right: 0px;
+    }
+    .#{$prefix}-conent {
+        position: relative;
+    }
+
+    .#{$prefix}-toggle {
+        background: #EEEEEE;
+        border: 1px solid #DDDDDD;
+        width: 18px;
+        font-size: 12px;
+        height: 50px;
+        line-height: 50px;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        left: 0;
+        margin: auto;
+        cursor: pointer;
+        position: absolute;
+
+        > i { 
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 12px;
+            position: absolute;
+        }
+    }
+}
+.dtc-handsontable-no-border {
+    .handsontable{
+        thead tr:first-child th{
+            border-top: 0px;
+        }
+        th:first-child{
+            border-left: 0px;
+        }
+    }
+}
+
+
+
+.dtc-ant-modal-control {
+    .ant-modal-content {
+        height: 100%
+    }
+}
+.dtc-ant-modal_icon__position {
+    position: absolute;
+    right: 48px;
+    top: -38px;
+    color: rgba(0, 0, 0, 0.43)
+}
+.dtc-icon__cursor {
+    cursor: pointer;
+}
+/*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+
+.dtc-vs-dark {
+    .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: #1E1E1E;
+        color: #DCDCDC;
+    }
+    .hljs-keyword,
+    .hljs-literal,
+    .hljs-symbol,
+    .hljs-name {
+        color: #569CD6;
+    }
+    .hljs-link {
+        color: #569CD6;
+        text-decoration: underline;
+    }
+    .hljs-built_in,
+    .hljs-type {
+        color: #4EC9B0;
+    }
+    .hljs-number,
+    .hljs-class {
+        color: #B8D7A3;
+    }
+    .hljs-string,
+    .hljs-meta-string {
+        color: #D69D85;
+    }
+    .hljs-regexp,
+    .hljs-template-tag {
+        color: #9A5334;
+    }
+    .hljs-subst,
+    .hljs-function,
+    .hljs-title,
+    .hljs-params,
+    .hljs-formula {
+        color: #DCDCDC;
+    }
+    .hljs-comment,
+    .hljs-quote {
+        color: #57A64A;
+        font-style: italic;
+    }
+    .hljs-doctag {
+        color: #608B4E;
+    }
+    .hljs-meta,
+    .hljs-meta-keyword,
+    .hljs-tag {
+        color: #9B9B9B;
+    }
+    .hljs-variable,
+    .hljs-template-variable {
+        color: #BD63C5;
+    }
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-builtin-name {
+        color: #9CDCFE;
+    }
+    .hljs-section {
+        color: gold;
+    }
+    .hljs-emphasis {
+        font-style: italic;
+    }
+    .hljs-strong {
+        font-weight: bold;
+    }
+    /*.hljs-code {
+        font-family:'Monospace';
+      }*/
+    .hljs-bullet,
+    .hljs-selector-tag,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+        color: #D7BA7D;
+    }
+    .hljs-addition {
+        background-color: #144212;
+        display: inline-block;
+        width: 100%;
+    }
+    .hljs-deletion {
+        background-color: #600;
+        display: inline-block;
+        width: 100%;
+    }
+}
+/*
+
+Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
+*/
+
+.dtc-vs {
+    .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: white;
+        color: black;
+    }
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-variable {
+        color: #008000;
+    }
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-built_in,
+    .hljs-name,
+    .hljs-tag {
+        color: #00f;
+    }
+    .hljs-string,
+    .hljs-title,
+    .hljs-section,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-template-tag,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-addition {
+        color: #a31515;
+    }
+    .hljs-deletion,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo,
+    .hljs-meta {
+        color: #2b91af;
+    }
+    .hljs-doctag {
+        color: #808080;
+    }
+    .hljs-attr {
+        color: #f00;
+    }
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-link {
+        color: #00b0e8;
+    }
+    .hljs-emphasis {
+        font-style: italic;
+    }
+    .hljs-strong {
+        font-weight: bold;
+    }
+}

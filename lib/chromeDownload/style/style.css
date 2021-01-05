@@ -1,0 +1,22 @@
+.dtc-chrome-chrome-download {
+  background: #f2f7fa;
+  margin-top: 50px;
+  text-align: center;
+  overflow-y: auto; }
+  .dtc-chrome-chrome-download .dtc-chrome-pic-update {
+    width: 182px;
+    margin: 148px 0 17.5px 0; }
+  .dtc-chrome-chrome-download .dtc-chrome-divide {
+    margin: 80.5px 0 60px 0; }
+    .dtc-chrome-chrome-download .dtc-chrome-divide .dtc-chrome-divider-text {
+      margin: 0 20px;
+      font-size: 14px;
+      color: #666666; }
+  .dtc-chrome-chrome-download .dtc-chrome-download {
+    width: 160px;
+    margin: 0 auto;
+    cursor: pointer; }
+    .dtc-chrome-chrome-download .dtc-chrome-download .dtc-chrome-chrome-version {
+      margin-top: 16.5px;
+      font-size: 14px;
+      color: #666666; }

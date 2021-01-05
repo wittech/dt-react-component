@@ -1,0 +1,22 @@
+$card_prefix: 'dtc-circle';
+.#{$card_prefix}-default {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50% 50%;
+}
+.#{$card_prefix}-waitSubmit, .#{$card_prefix}-run, .#{$card_prefix}-created, .#{$card_prefix}-submitting, .#{$card_prefix}-restarting {
+    background: #F5A623;
+}
+.#{$card_prefix}-running {
+    background: #2491F7;
+}
+.#{$card_prefix}-finished {
+    background: #00A755;
+}
+.#{$card_prefix}-stopped, .#{$card_prefix}-frozen {
+    background: #94A8C6;
+}
+.#{$card_prefix}-fail {
+    background: #EF5350;
+}
